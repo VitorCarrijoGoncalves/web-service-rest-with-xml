@@ -9,23 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.webservice.xml.model.Usuario;
 
 @RestController
-@RequestMapping("/pessoas")
+@RequestMapping("/usuarios")
 public class PessoaController {
 	
 	@GetMapping(value="/{id}", produces=MediaType.APPLICATION_XML_VALUE)
-	public Usuario getPessoaById(@PathVariable Integer id) {
+	public Usuario getUsuarioById(@PathVariable Integer id) {
 		
 		Usuario usuario = new Usuario();
-		usuario.setId(1);
-		usuario.setNome("Fulano da Silva");
-		usuario.setEmail("fulano@email.com");
-		usuario.setStatus("OK");
 		
-		if (id == 1) {
+		if (id == 5646) {
 			
-			usuario.setId(1);
-			usuario.setNome("Fulano da Silva");
-			usuario.setEmail("fulano@email.com");
+			usuario.setId(5646);
+			usuario.setNome("DUILIO CALAÇA JUNIOR");
+			usuario.setEmail("duilio@redeempresarial.com");
 			usuario.setStatus("OK");
 			
 			return usuario;
@@ -40,9 +36,6 @@ public class PessoaController {
 			return usuario;
 			
 		}
-		
-//		<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-//		<usuario><email></email><id></id><nome></nome><status>FAIL</status></usuario>
 		
 		
 	}
